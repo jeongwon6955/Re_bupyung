@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard';
+}
+
+/* font */
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./Font/web/variable/pretendardvariable.css') format('woff-variations');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MangoDdobak-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* root */
+
+:root {
+    --main-color: #8dae57;
+    --mainDark-color: #2a5b2f;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    padding-inline: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.logo img {
+    width: 160px;
+    height: 60px;
+}
+
+.user {
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.user > button {
+    width: 130px;
+    height: 60px;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.user > button > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    align-content: center;
+}
+
+.sign-in {
+    background-color: #eeeeee;
+}
+
+.sign-up {
+    background-color: black;
+    color: #ffffff;
+}
+
+.visual {
+    background: url(img/main.jpg);
+    width: 100%;
+    height: 100vh;
+    max-height: 1000px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.mainSub_img {
+    width: 700px;
+    height: 550px;
+    margin-top: 100px;
+}
+
+.main_text {
+    font-size: 50px;
+    color: white;
+    letter-spacing: 10px;
+    font-weight: 300;
+    position: relative;
+}
+
+.main_text::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 37%;
+    width: 350px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+
+.main_text span {
+    font-weight: 900;
+    position: relative;
+    color: var(--mainDark-color);
+}
+
+.main_text span::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 115px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
