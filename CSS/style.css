@@ -197,7 +197,7 @@ header {
     width: 60px;
     height: 60px;
     transform: rotate(20deg);
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .s_list::before {
