@@ -1,0 +1,11 @@
+/* 실천방법 */
+.method {
+    width: 100%;
+    background-color: #66D918;
+    height: 650px;
+}
+
+.m_container {
+    width: 1200px;
+    margin: 0 auto;
+}

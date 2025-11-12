@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/intro.css">
+    <link rel="stylesheet" href="../CSS/method.css">
     <title>다시부평</title>
 </head>
 <body>
@@ -17,10 +18,19 @@
             </div>
 
             <!-- 로그인 영역 -->
-
             <div class="user">
-                <button type="button" class="sign-in"><a href="#">로그인</a></button>
-                <button type="button" class="sign-up"><a href="#">회원가입</a></button>
+                <div class="user_box">
+                    <div class="user_label">
+                        <button type="button" class="sign-inB"><a href="#">로그인</a></button>
+                        <button type="button" class="sign-inT"><a href="#">로그인</a></button>
+                    </div>
+                </div>
+                <div class="user_box">
+                    <div class="user_label">
+                        <button type="button" class="sign-upB"><a href="#">회원가입</a></button>
+                        <button type="button" class="sign-upT"><a href="#">회원가입</a></button>
+                    </div>
+                </div>
             </div>
 
         </header>
@@ -36,7 +46,7 @@
         <!-- 사이드 메뉴 -->
         <div class="side_menu">
             <div class="s_list" id="intro_btn"><img src="../img/icon.png" alt=""> <span class="s_text">다시 부평이란?</span></div>
-            <div class="s_list"><img src="../img/icon1.png" alt=""> <span class="s_text">자연순환 <br> 실천방법</span></div>
+            <div class="s_list" id="method_btn"><img src="../img/icon1.png" alt=""> <span class="s_text">자연순환 <br> 실천방법</span></div>
             <div class="s_list"><img src="../img/icon2.png" alt=""> <span class="s_text">네프론이란?</span></div>
             <div class="s_list"><img src="../img/icon3.png" alt=""> <span class="s_text">자연순환 <br> 참여 기업</span></div>
         </div>
@@ -44,7 +54,7 @@
 
     <!-- 다시 부평이란? -->
     <section class="intro">
-        <div class="i_container">
+        <div class="i_container container">
             <h1>다시 부평이란?</h1>
             <h2>다시 부평은 자원도, 환경도, 부평도 다시 살아나는 순환을 뜻합니다.</h2>
             <div class="i_content">
@@ -71,6 +81,16 @@
             </div>
         </div>
     </section>
+
+    <!-- 자원순환 실천방법 -->
+    <section class="method">
+        <div class="m_container container">
+            <h1>자원순환 실천방법</h1>
+            <h2>분리수거</h2>
+        </div>
+    </section>
+
+    <div class="box" style="height: 100vh;"></div>
 
     <!-- app.js -->
     <script src="../JS/app.js"></script>
