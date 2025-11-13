@@ -220,7 +220,6 @@ header {
     opacity: 0;
     visibility: hidden;
     font-weight: 900;
-    font-family: 'MangoBoard-R';
     transition: 0.2s ease-in-out;
 }
 
@@ -258,7 +257,6 @@ header {
 .container > h2 {
     margin-top: 30px;
     text-align: center;
-    /* font-family: 'MangoBoard-L'; */
     font-weight: 100;
 }
 
