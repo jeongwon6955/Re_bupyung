@@ -1,13 +1,18 @@
 /* 자연순환 실천방법 */
 .method {
     width: 100%;
-    background-color: #66D918;
+    background-color: #fff;
     height: 650px;
 }
 
 .m_container {
     width: 1200px;
     margin: 0 auto;
+}
+
+.m_container > h1 > span {
+    color: black;
+    font-family: 'MangoBoard-L';
 }
 
 .m_content {
@@ -22,7 +27,7 @@
     width: 250px;
     height: 250px;
     padding: 25px;
-    background-color: white;
+    background-color: #eeeeee;
     border-radius: 150px;
 }
 

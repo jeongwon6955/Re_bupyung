@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'MangoBoard-R';
+    font-family: 'MangoBoard-L';
 }
 
 /* font */
@@ -16,20 +16,10 @@
 }
 
 /* 망고보드 */
-
-/* 얇은 굵기 */
 @font-face {
     font-family: 'MangoBoard-L';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-L.woff2') format('woff2');
     font-weight: 300;
-    font-display: swap;
-}
-
-/* 기본 굵기 */
-@font-face {
-    font-family: 'MangoBoard-R';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-R.woff2') format('woff2');
-    font-weight: 400;
     font-display: swap;
 }
 
@@ -268,7 +258,8 @@ header {
 .container > h2 {
     margin-top: 30px;
     text-align: center;
-    font-family: 'MangoBoard-L';
+    /* font-family: 'MangoBoard-L'; */
+    font-weight: 100;
 }
 
 /* 컨테이너 */

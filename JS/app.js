@@ -1,6 +1,7 @@
 // 버튼 스크롤 효과
 const introBtn = document.querySelector('#intro_btn');
 const methodBtn = document.querySelector('#method_btn');
+const nephronBtn = document.querySelector('#nephron_btn');
 
 introBtn.addEventListener('click', () => {
     const target = document.querySelector('.intro');
@@ -13,6 +14,15 @@ introBtn.addEventListener('click', () => {
 
 methodBtn.addEventListener('click', () => {
     const target = document.querySelector('.method');
+
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end'
+    })
+})
+
+nephronBtn.addEventListener('click', () => {
+    const target = document.querySelector('.nephron');
 
     target.scrollIntoView({
         behavior: 'smooth',
