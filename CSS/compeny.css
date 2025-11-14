@@ -1,0 +1,46 @@
+/* 자연순환 참여 기업 */
+.c_container {
+    height: 670px;
+}
+
+.c_content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.c_item {
+    width: 590px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: right;
+    background-color: var(--main-color);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.c_num {
+    font-size: 30px;
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.c_num > p:nth-child(2) {
+    font-size: 45px;
+    font-weight: 900;
+    color: var(--mainDark-color);
+}
+
+.l_logo {
+    font-size: 30px;
+}

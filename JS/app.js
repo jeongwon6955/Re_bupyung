@@ -2,6 +2,7 @@
 const introBtn = document.querySelector('#intro_btn');
 const methodBtn = document.querySelector('#method_btn');
 const nephronBtn = document.querySelector('#nephron_btn');
+const compenyBtn = document.querySelector('#compeny_btn');
 
 introBtn.addEventListener('click', () => {
     const target = document.querySelector('.intro');
@@ -23,6 +24,15 @@ methodBtn.addEventListener('click', () => {
 
 nephronBtn.addEventListener('click', () => {
     const target = document.querySelector('.nephron');
+
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end'
+    })
+})
+
+compenyBtn.addEventListener('click', () => {
+    const target = document.querySelector('.compeny');
 
     target.scrollIntoView({
         behavior: 'smooth',
