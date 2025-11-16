@@ -1,0 +1,6 @@
+RewriteEngine On
+# 파일이나 폴더가 실제로 존재하면 요청을 그대로 전달
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+# 그 외의 모든 요청은 index.php로 넘김
+RewriteRule ^(.*)$ index.php [QSA,L]
