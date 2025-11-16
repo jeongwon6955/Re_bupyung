@@ -1,61 +1,66 @@
-/* 네프론이란? */
-.nephron {
-    width: 100%;
-    height: 600px;
-    background-color: #EBF3D3;
+/* 네프론이란 */
+#nephron {
+    background-color: lightblue;
+    min-height: 150vh;
 }
 
-.n_container {
+.nep_exp { text-align: center; }
+
+.nep_exp p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--sub-color);
+}
+
+.nep_exp h1 {
+    font-size: 6.5rem;
+    font-weight: bold;
+    line-height: 8.5rem;
+    margin: 60px 0 150px 0;
+}
+
+.nep_con {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 600px;
+    padding: 160px 0;
 }
 
-.n_imgBox {
-    width: 350px;
-    height: 100%;
-    align-content: end;
-    text-align: center;
-}
+.nep_con:nth-of-type(1) { padding-top: 0; }
+.nep_con:nth-last-of-type(1) { padding-bottom: 0; }
 
-.n_more {
-    width: 300px;
-    height: 50px;
-    border-radius: 50px;
-    border: none;
+.nep_img {
+    width: 520px;
+    height: 640px;
     background-color: white;
-    margin-bottom: 80px;
-    font-size: 19px;
-    font-weight: 900;
-    box-shadow: 5px 5px 3px 3px rgba(0,0,0,0.1);
-    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
 }
 
-.n_more:hover {
-    box-shadow: inset 5px 5px 3px 3px rgba(0,0,0,0.1);
-    background-color: var(--main-color);
-    color: white;
+.nep_img img {
+    object-fit: cover;
+    width: 100%;
 }
 
-.n_imgBox img {
-    width: 350px;
-    margin-bottom: 120px;
+#superbin img { width: 80%; }
+
+/* 콘텐츠 */
+.nep_info { width: 520px; }
+
+.nep_info h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--sub-color);
 }
 
-.n_textBox {
-    height: 100%;
-    align-content: center;
-    font-size: 21px;
+.nep_info h1 {
+    margin: 40px 0 60px 0;
+    font-size: 4rem;
 }
 
-.n_textBox h1 {
-    text-align: center;
-    margin-bottom: 100px;
-    font-size: 60px;
-    color: var(--mainDark-color);
-}
-
-.n_textBox p {
-    line-height: 50px;
+.nep_info p {
+    font-size: 2rem;
+    line-height: 3.5rem;
 }

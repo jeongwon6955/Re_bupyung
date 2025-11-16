@@ -1,200 +1,224 @@
-<?php
-
-
+<?php 
+    $base_root = "/Re_bupyung/COMPLETION/app/views";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../app/views/CSS/style.css">
-    <link rel="stylesheet" href="../app/views/CSS/intro.css">
-    <link rel="stylesheet" href="../app/views/CSS/method.css">
-    <link rel="stylesheet" href="../app/views/CSS/nephron.css">
-    <link rel="stylesheet" href="../app/views/CSS/compeny.css">
-    <title>다시부평</title>
-    <script src="https://kit.fontawesome.com/2ff1512d45.js" crossorigin="anonymous"></script>
+    <title>다시 부평</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="<?= $base_root ?>/CSS/style.css">
+    <link rel="stylesheet" href="<?= $base_root ?>/CSS/intro.css">
+    <link rel="stylesheet" href="<?= $base_root ?>/CSS/nephron.css">
+    <link rel="stylesheet" href="<?= $base_root ?>/CSS/method.css">
+    <link rel="stylesheet" href="<?= $base_root ?>/CSS/compeny.css">
 </head>
 <body>
-    <section class="visual">
-        <!-- 헤더 영역 -->
-        <header>
-            <!-- 로고-->
-            <div class="logo">
-               <a href="<?= $base_path ?>/"><img src="../app/views/img/logo.png" alt=""></a>
-            </div>
+    
+    <!-- 헤더 영역 -->
+    <header>
+        <!-- 로고 -->
+        <a href="main.php" class="logo">
+            <img src="<?= $base_root ?>/IMG/logo.png" alt="로고" title="다시부평">
+        </a>
 
-            <!-- 로그인 영역 -->
-            <div class="user">
-                <div class="user_box">
-                    <div class="user_label">
-                        <button type="button" class="sign-inB"><a href="<?= $base_path ?>/login">로그인</a></button>
-                        <button type="button" class="sign-inT"><a href="<?= $base_path ?>/login">로그인</a></button>
-                    </div>
-                </div>
-                <div class="user_box">
-                    <div class="user_label">
-                        <button type="button" class="sign-upB"><a href="<?= $base_path ?>/register">회원가입</a></button>
-                        <button type="button" class="sign-upT"><a href="<?= $base_path ?>/register">회원가입</a></button>
-                    </div>
-                </div>
-            </div>
+        <!-- 내비게이션 -->
+        <nav>
+            <ul>
+                <li><a href="#intro">소개</a></li>
+                <li><a href="#method">실천방법</a></li>
+                <li><a href="#nephron">네프론</a></li>
+                <li><a href="#company">참여기업</a></li>
+            </ul>
+        </nav>
 
-        </header>
-
-        <div class="v_content">
-            <!-- 메인 이미지 -->
-            <img src="../app/views/img/mainSub.png" alt="" class="mainSub_img">
-     
-            <!-- 메인 텍스트 -->
-            <h1 class="main_text">다시 시작하는<span> 부평</span></h1>
+        <!-- 로그인 / 회원가입 -->
+        <div class="user">
+            <div class="sign_in"><button type="button">
+                <a href="/Re_bupyung/COMPLETION/public/index.php?action=login">로그인</a>
+                <a href="/Re_bupyung/COMPLETION/public/index.php?action=login">로그인</a>
+            </button></div>
+            <div class="sign_up"><button type="button">
+                <a href="#">회원가입</a>
+                <a href="#">회원가입</a>
+            </button></div>
         </div>
+    </header>
 
-        <!-- 사이드 메뉴 -->
-        <div class="side_menu">
-            <div class="s_list" id="intro_btn"><img src="../app/views/img/icon.png" alt=""> <span class="s_text">다시 부평이란?</span></div>
-            <div class="s_list" id="method_btn"><img src="../app/views/img/icon1.png" alt=""> <span class="s_text">자연순환 <br> 실천방법</span></div>
-            <div class="s_list" id="nephron_btn"><img src="../app/views/img/icon2.png" alt=""> <span class="s_text">네프론이란?</span></div>
-            <div class="s_list" id="compeny_btn"><img src="../app/views/img/icon3.png" alt=""> <span class="s_text">자연순환 <br> 참여 기업</span></div>
-        </div>
+    <!-- 비주얼 영역 -->
+    <section id="visual">
+        <img id="backImg" src="<?= $base_root ?>/IMG/main.jpg" alt="비주얼 백그라운드 이미지" title="풀숲">
+        <img id="backContent" src="<?= $base_root ?>/IMG/mainSub.png" alt="비주얼 이미지" title="가운데에 쓰레기통">
+        <h1 class="visual_text">다시 시작하는<span> 부평</span></h1>
+        <div class="scrTo"></div>
     </section>
 
     <!-- 다시 부평이란? -->
-    <section class="intro">
-        <div class="i_container container">
-            <h1>다시 부평이란?</h1>
-            <h2>다시 부평은 자원도, 환경도, 부평도 다시 살아나는 순환을 뜻합니다.</h2>
-            <div class="i_content">
-                <div class="i_item">
-                    <img src="../app/views/img/item.png" alt="">
-                    <p class="key">Reduce</p>
-                    <p class="key_cont">불필요한것은 줄이고</p>
-                </div>
-                <div class="i_item">
-                    <img src="../app/views/img/item2.png" alt="">
-                    <p class="key">reuse</p>
-                    <p class="key_cont">한 번 더 사용하고</p>
-                </div>
-                <div class="i_item">
-                    <img src="../app/views/img/item3.png" alt="">
-                    <p class="key">recycle</p>
-                    <p class="key_cont">올바르게 재활용 하고</p>
-                </div>
-                <div class="i_item">
-                    <img src="../app/views/img/item4.png" alt="">
-                    <p class="key">recovery</p>
-                    <p class="key_cont">에너지 만들고</p>
-                </div>
+    <section id="intro" class="sec">
+        <div class="s_container">
+            <!-- 섹션 제목 -->
+            <div class="sec_title">
+                <h1>다시 부평이란</h1>
+                <h3>다시 부평은 자원도, 환경도, 부평도 다시 살아나는 순환을 뜻합니다.</h3>
             </div>
+
+            <!-- 콘텐츠 -->
+            <div class="intro_cont">
+                <article class="intro_item">
+                    <img src="<?= $base_root ?>/IMG/item.png" alt="소개 이미지">
+                    <p class="key">reduce</p>
+                    <p class="key_exp">불필요한 것은 줄이고</p>
+                </article>
+                <article class="intro_item">
+                    <img src="<?= $base_root ?>/IMG/item2.png" alt="소개 이미지">
+                    <p class="key">reuse</p>
+                    <p class="key_exp">한 번 더 사용하고</p>
+                </article>
+                <article class="intro_item">
+                    <img src="<?= $base_root ?>/IMG/item3.png" alt="소개 이미지">
+                    <p class="key">recycle</p>
+                    <p class="key_exp">올바르게 재활용하고</p>
+                </article>
+                <article class="intro_item">
+                    <img src="<?= $base_root ?>/IMG/item4.png" alt="소개 이미지">
+                    <p class="key">recovery</p>
+                    <p class="key_exp">에너지 만들고</p>
+                </article>
+            </div>
+
+            <!-- 자세히 보기 -->
+            <button type="button" class="view_more">자세히 알아보기</button>
         </div>
     </section>
 
     <!-- 자원순환 실천방법 -->
-    <section class="method">
-        <div class="m_container container">
-            <h1>자원순환 <span>실천방법</span></h1>
-            <h2>분리수거</h2>
-            <div class="m_content">
-                <div class="m_item">
-                    <a href="#">
-                        <div class="m_img"><img src="../../img/icon.png" alt=""></div>
-                        <p>플라스틱</p>
-                    </a>
-                </div>
-                <div class="m_item">
-                    <a href="#">
-                        <div class="m_img"><img src="../../img/icon1.png" alt=""></div>
-                        <p>비닐</p>
-                    </a>
-                </div>
-                <div class="m_item">
-                    <a href="#">
-                        <div class="m_img"><img src="../../img/icon2.png" alt=""></div>
-                        <p>캔</p>
-                    </a>
-                </div>
-                <div class="m_item">
-                    <a href="#">
-                        <div class="m_img"><img src="../../img/icon3.png" alt=""></div>
-                        <p>종이</p>
-                    </a>
-                </div>
+    <section id="method" class="sec">
+        <div class="water_course"></div>
+        <div class="s_container">
+            <!-- 섹션 제목 -->
+            <div class="con_title">
+                <h1>자원순환 실천방법</h1>
+                <h3>우리가 버린 쓰레기는 다시 자원이 될 수 있습니다.</h3>
             </div>
         </div>
     </section>
 
-    <!-- 네프론 이란? -->
-    <section class="nephron">
-        <div class="n_container container">
-            <div class="n_imgBox">
-                <img src="../app/views/img/SuperBin Logo_Primary_ENG.png" alt="">
-                <a href="https://www.superbin.co.kr/#" target="_blank">
-                    <button type="button" class="n_more">자세히 알아보기</button>
-                </a>
+    <!-- 네프론이란 -->
+    <section id="nephron" class="sec">
+        <div class="s_container">
+            <!-- 섹션 제목 -->
+            <div class="nep_exp">
+                <p>쓰레기가 돈이 되는 세상</p>
+                <h1>
+                    쓰레기가 돈이 되고<br>
+                    재활용이 놀이가 되는<br>
+                    세상을 만듭니다.
+                </h1>
             </div>
-            <div class="n_textBox">
-                <h1>네프론이란?</h1>
-                <p>네프론은 AI 기술로 작동하는 무인 투명페트병 수거함입니다. <br> 
-                   사용자가 페트병을 넣으면 네프론이 자동으로 분류하고 수거하여, <br>
-                   고품질 재활용이 가능하도록 돕는 스마트한 자원순환 기기입니다.</p>
+            <div class="nep_con">
+                <div class="nep_info">
+                    <h2>01</h2>
+                    <h1>네프론이란?</h1>
+                    <p>
+                        네프론은 AI 기술로 작동하는<br>
+                        무인 투명페트병 수거함입니다.<br>
+                        사용자가 페트병을 넣으면 네프론이 자동으로 분류하고<br>
+                        수거하여, 고품질 재활용이 가능하도록 돕는<br>
+                        스마트한 자원순환 기기입니다.
+                    </p>
+                </div>
+                <div class="nep_img" id="superbin"><img src="<?= $base_root ?>/IMG/SuperBin Logo_Primary_ENG.png" alt="수퍼빈"></div>
             </div>
+
+            <div class="nep_con">
+                <div class="nep_img"><img src="<?= $base_root ?>/IMG/1_home_change_bg.jpg" alt=""></div>
+                <div class="nep_info">
+                    <h2>02</h2>
+                    <h1>순환경제로의<br>전환을 이뤄냅니다.</h1>
+                    <p>
+                        버려지는 쓰레기를 다시 소재로 활용할 수<br>
+                        있도록 선별 수집 시스템 및 물류 인프라를<br>
+                        재설계하여 이전에 없던 새로운 방식의<br>
+                        순환경제를 구축합니다.
+                    </p>
+                </div>
+            </div>
+            <div class="nep_con">
+                <div class="nep_info">
+                    <h2>03</h2>
+                    <h1>생명과의 공존을<br>실천합니다.</h1>
+                    <p>
+                        깨끗한 지구를 위해 다양한 생명이<br>
+                        보장되는 공동체를 만들어갑니다. 공존과<br>
+                        균형을 지켜 나가는 것, 미래를 위한 우리<br>
+                        세대의 역할입니다.
+                    </p>
+                </div>
+                <div class="nep_img"><img src="<?= $base_root ?>/IMG/1_home_coexist_bg.jpg" alt=""></div>
+            </div>
+
+            <button type="button" class="view_more"><a href="https://www.superbin.co.kr/" target="_blank">자세히 알아보기</a></button>
         </div>
     </section>
 
-    <!-- 자연순환 참여 기업 -->
-    <section class="compeny">
-        <div class="c_container container">
-            <h1>자연순환 참여 기업</h1>
-            <div class="c_content">
-                <div class="c_item">
-                    <span>starbucks</span>
-                    <div class="c_num">
-                        <p>텀블러 사용하기</p>
-                        <p>166,437,176</p>
-                    </div>
-                </div>
-                <div class="c_item">
-                    <span>자연드림</span>
-                    <div class="c_num">
-                        <p>페트병 생수 절감</p>
-                        <p>269,056,631</p>
-                    </div>
-                </div>
-                <div class="c_item">
-                    <span>dunkin'</span>
-                    <div class="c_num">
-                        <p>친환경포장재 전환</p>
-                        <p>13,548,971</p>
-                    </div>
-                </div>
-                <div class="c_item">
-                    <span>배달<span class="l_logo">의</span> 민족</span>
-                    <div class="c_num">
-                        <p>일회용품 덜쓰기</p>
-                        <p>17,296,352</p>
-                    </div>
-                </div>
+    <!-- 자연순환 참여기업 -->
+    <section id="company" class="sec">
+        <div class="s_container">
+            <!-- 섹션 제목 -->
+            <div class="sec_title">
+                <h1>자연순환 참여기업</h1>
+                <h3>지자체뿐만 아니라 세계 여러 기업에서도 지구를 위해 노력하고 있습니다.</h3>
             </div>
+
+            <!-- 콘텐츠 -->
+            <div class="comp_con">
+                <article class="comp_item">
+                    <h1>starbucks</h1>
+                    <p>텀블러 사용하기</p>
+                    <h2>166,437,176</h2>
+                </article>
+                <article class="comp_item">
+                    <h1>자연드림</h1>
+                    <p>페트병 생수 절감</p>
+                    <h2>269,056,631</h2>
+                </article>
+                <article class="comp_item">
+                    <h1>dunkin'</h1>
+                    <p>친환경 포장재 전환</p>
+                    <h2>13,548,971</h2>
+                </article>
+                <article class="comp_item">
+                    <h1>배달의 민족</h1>
+                    <p>일회용품 덜 쓰기</p>
+                    <h2>17,296,352</h2>
+                </article>
+            </div>
+
+            <button type="button" class="view_more"><a href="https://www.recycling-info.or.kr/act4r/main.do" target="_blank">자세히 알아보기</a></button>
         </div>
     </section>
-    
-    <!-- 푸터 -->
+
+    <!-- 푸터 영역 -->
     <footer>
-        <div class="footer">
-            <div class="f_top">
-                <img src="../app/views/img/logo_white.png" alt="">
-                <p>인천광역시 부평구 산곡동 화랑로 111 <br>
-                   인평자동차 고등학교
-                </p>
+        <div id="footer">
+            <div class="s_container">
+                <a href="index.html" class="logo"><img src="<?= $base_root ?>/IMG/logo_white.png" alt="푸터 로고"></a>
+
+                <!-- 사이트 정보 -->
+                <div class="site_info">
+                    <p><span>adress</span>인천광역시 부평구 산곡3동 화랑로 111 인평자동차고등학교</p>
+                    <p><span>developer</span>최정원</p>
+                    <p><span>source</span>자연순환 실천 플랫폼(https://www.recycling-info.or.kr/act4r/main.do)</p>
+                </div>
             </div>
-            <div class="f_bottom">
-                <p>Copyright&copy2025 Jeongwon choi. All right reserved</p>
-                <p>출처: 자연순환 실천 플랫폼(https://www.recycling-info.or.kr/act4r/main.do)</p>
-            </div>
+
+            <!-- 카피라이트 -->
+            <p class="copyright">Copyright&copy;2025 Designed by Jeongwon Choi. All right reserved</p>
         </div>
     </footer>
 
-    <!-- app.js -->
-    <script src="../app/views/JS/app.js"></script>
+    <script src="<?= $base_root ?>/JS/app.js"></script>
 </body>
 </html>

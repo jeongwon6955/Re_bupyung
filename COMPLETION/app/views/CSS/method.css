@@ -1,49 +1,55 @@
-/* 자연순환 실천방법 */
-.method {
+/* 자원순환 실천방법 */
+#method {
+    background-color: white;
+    height: 170vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#method::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 80vw;
+    background-color: #a7d0ab;
+    border-radius: 15vw;
+    transform: translate(50%, -25%) rotate(30deg);
+    z-index: 2;
+}
+
+#method::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60vw;
+    height: 60vw;
+    background-color: var(--sub-color);
+    border-radius: 15vw;
+    transform: translate(-50%, 25%) rotate(30deg);
+    z-index: 2;
+}
+
+/* 물줄기 */
+.water_course {
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 100%;
-    background-color: #fff;
-    height: 650px;
+    aspect-ratio: 1;
+    background-color: lightblue;
+    z-index: 1;
 }
 
-.m_container {
-    width: 1200px;
-    margin: 0 auto;
+/* 콘텐츠 제목 */
+.con_title h1 {
+    font-size: 4rem;
+    color: var(--sub-color);
+    margin-bottom: 20px;
 }
 
-.m_container > h1 > span {
-    color: black;
-    font-family: 'MangoBoard-L';
-}
-
-.m_content {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.m_img {
-    width: 250px;
-    height: 250px;
-    padding: 25px;
-    background-color: #eeeeee;
-    border-radius: 150px;
-}
-
-.m_img img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-}
-
-.m_item p {
-    font-size: 30px;
-    text-align: center;
-    margin-top: 20px;
-    font-weight: 900;
-}
-
-.m_img:hover {
-    box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
+.con_title h3 {
+    font-size: 1.8rem;
 }

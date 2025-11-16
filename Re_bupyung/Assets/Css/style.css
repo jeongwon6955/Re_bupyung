@@ -1,0 +1,545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MangoBoard-L';
+    color: #222;
+}
+
+/* 망고보드 */
+@font-face {
+    font-family: 'MangoBoard-L';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-L.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+li {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: inherit;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+:root {
+    --main-color: #8dae57;
+    --sub-color: #2a5b2f;
+    --sec-color: #ebffd3;
+    --cwidth: 1200px;
+}
+
+/* 헤더 영역 */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    padding-inline: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+
+/* 로고 */
+.logo { display: flex; }
+.logo img {
+    object-fit: cover;
+    width: 160px;
+    aspect-ratio: 2.5 / 1;
+}
+
+/* 내비게이션 */
+nav {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(246, 246, 246, .8);
+    backdrop-filter: blur(10px);
+    height: 50px;
+    align-content: center;
+    border-radius: 50px;
+    border: 1px solid #f0f0f0;
+}
+
+nav > ul { display: flex; }
+nav > ul > li > a {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    height: 40px;
+    align-content: center;
+    padding: 0 15px;
+    border-radius: 40px;
+    margin: 0 5px;
+}
+
+nav > ul > li > a:hover {
+    transition: .2s ease-out;
+    color: var(--main-color);
+}
+
+/* 로그인 / 회원가입 */
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user > div {
+    width: 110px;
+    height: 45px;
+    border-radius: 45px;
+    overflow: hidden;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.user button {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    transition: .2s ease-out;
+}
+
+.user a {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-content: center;
+    transition: .2s ease-out;
+}
+
+.sign_in { background-color: white; }
+.sign_up { background-color: #2e2e2e; }
+.sign_up a { color: #eee; }
+
+.user a:nth-last-child(1) {
+    color: #eee;
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+}
+
+.sign_in a:nth-last-child(1) { background-color: var(--sub-color); }
+.sign_up a:nth-last-child(1) { background-color: var(--main-color); }
+
+.user > div:hover button { transform: translateX(-50%); }
+.user > div:hover a:nth-last-child(1) {
+    border-radius: 10px;
+}
+
+/* 비주얼 영역 */
+#visual {
+    position: relative;
+    width: 100%;
+    height: 110vh;
+}
+
+#visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #f0f0f7cc 5%, transparent 40%, transparent);
+}
+
+#visual::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+#backImg {
+    position: fixed;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+#backContent {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    height: 55%;
+}
+
+.visual_text {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 6.5rem;
+    color: white;
+    width: 100%;
+    padding-inline: 80px;
+}
+
+.visual_text span {
+    font-weight: bold;
+    color: var(--sec-color);
+}
+
+.scrTo {
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    transform: translateX(-50%);
+    width: 25px;
+    aspect-ratio: 1.5 / 2.5;
+    border: 2px solid #eeeeeeb0;
+    border-radius: 25px;
+}
+
+.scrTo::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    width: 5px;
+    aspect-ratio: 1 / 2;
+    border-radius: 10px;
+    background-color: #eeeeeeb0;
+    animation: scrolling infinite ease-in-out 1.5s;
+}
+
+@keyframes scrolling {
+    to {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+}
+
+/* 다시 부평이란? */
+.sec {
+    position: relative;
+    padding: 150px 0;
+}
+
+#intro {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--sec-color);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* 컨테이너 */
+.s_container {
+    position: relative;
+    width: var(--cwidth);
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* 섹션 제목 */
+.sec_title {
+    text-align: center;
+}
+
+.sec_title h1 {
+    font-size: 4rem;
+    color: var(--sub-color);
+    margin-bottom: 40px;
+}
+
+.sec_title h3 {
+    font-size: 1.8rem;
+}
+
+/* 콘텐츠 */
+.intro_cont {
+    margin-top: 80px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.intro_item {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.intro_item img {
+    object-fit: cover;
+    width: 200px;
+}
+
+.key {
+    margin-top: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--sub-color);
+}
+
+.key_exp {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* 자세히보기 */
+.view_more {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    padding: 0 30px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .2s ease-out;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.view_more:hover {
+    box-shadow: inset 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-color);
+    color: #eee;
+}
+
+/* 자원순환 실천방법 */
+#method {
+    background-color: white;
+    height: 170vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#method::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 80vw;
+    background-color: #a7d0ab;
+    border-radius: 15vw;
+    transform: translate(50%, -25%) rotate(30deg);
+    z-index: 2;
+}
+
+#method::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60vw;
+    height: 60vw;
+    background-color: var(--sub-color);
+    border-radius: 15vw;
+    transform: translate(-50%, 25%) rotate(30deg);
+    z-index: 2;
+}
+
+/* 물줄기 */
+.water_course {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: lightblue;
+    z-index: 1;
+}
+
+/* 콘텐츠 제목 */
+.con_title h1 {
+    font-size: 4rem;
+    color: var(--sub-color);
+    margin-bottom: 20px;
+}
+
+.con_title h3 {
+    font-size: 1.8rem;
+}
+
+/* 네프론이란 */
+#nephron {
+    background-color: lightblue;
+    min-height: 150vh;
+}
+
+.nep_exp { text-align: center; }
+
+.nep_exp p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--sub-color);
+}
+
+.nep_exp h1 {
+    font-size: 6.5rem;
+    font-weight: bold;
+    line-height: 8.5rem;
+    margin: 60px 0 150px 0;
+}
+
+.nep_con {
+    display: flex;
+    justify-content: space-between;
+    padding: 160px 0;
+}
+
+.nep_con:nth-of-type(1) { padding-top: 0; }
+.nep_con:nth-last-of-type(1) { padding-bottom: 0; }
+
+.nep_img {
+    width: 520px;
+    height: 640px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.nep_img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+#superbin img { width: 80%; }
+
+/* 콘텐츠 */
+.nep_info { width: 520px; }
+
+.nep_info h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--sub-color);
+}
+
+.nep_info h1 {
+    margin: 40px 0 60px 0;
+    font-size: 4rem;
+}
+
+.nep_info p {
+    font-size: 2rem;
+    line-height: 3.5rem;
+}
+
+/* 자연순환 참여기업 */
+#company {
+    background-color: white;
+}
+
+.comp_con {
+    margin-top: 80px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.comp_item {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #a7d0ab;
+    border-radius: 40px;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.comp_item h1 {
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.comp_item p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.comp_item h2 {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    font-size: 3rem;
+    color: var(--sub-color);
+}
+
+/* footer */
+footer {
+    width: 100%;
+    min-height: 300px;
+    background-color: white;
+}
+
+#footer {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-color: var(--sub-color);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    padding: 50px 0;
+}
+
+footer .logo img {
+    aspect-ratio: 3 / 1;
+}
+
+.site_info {
+    margin-top: 40px;
+}
+
+.site_info p {
+    font-size: 1.4rem;
+    color: #eee;
+    margin-top: 10px;
+}
+
+.site_info span {
+    color: var(--sec-color);
+    text-transform: capitalize;
+    margin-right: 20px;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--cwidth);
+    color: #dadada;
+    font-size: 1.4rem;
+    border-top: 1px solid #a0a0a0;
+    padding-top: 15px;
+}

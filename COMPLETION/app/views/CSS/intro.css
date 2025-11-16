@@ -1,36 +1,94 @@
 /* 다시 부평이란? */
-.intro {
-    width: 100%;
-    height: 650px;
-    background-color: #EBF3D3;
+.sec {
+    position: relative;
+    padding: 150px 0;
 }
 
-.i_content {
+#intro {
     width: 100%;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height: 100vh;
+    background-color: var(--sec-color);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
 }
 
-.i_item {
-    width: 250px;
+/* 컨테이너 */
+.s_container {
+    position: relative;
+    width: var(--cwidth);
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* 섹션 제목 */
+.sec_title {
     text-align: center;
 }
 
-.i_item > img {
+.sec_title h1 {
+    font-size: 4rem;
+    color: var(--sub-color);
+    margin-bottom: 40px;
+}
+
+.sec_title h3 {
+    font-size: 1.8rem;
+}
+
+/* 콘텐츠 */
+.intro_cont {
+    margin-top: 80px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.intro_item {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.intro_item img {
+    object-fit: cover;
     width: 200px;
 }
 
 .key {
-    color: var(--main-color);
-    font-size: 30px;
     margin-top: 20px;
-    text-transform: uppercase;
-    font-weight: 900;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--sub-color);
 }
 
-.key_cont {
+.key_exp {
+    font-size: 1.8rem;
+    font-weight: bold;
     margin-top: 20px;
-    font-size: 19px;
+}
+
+/* 자세히보기 */
+.view_more {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    padding: 0 30px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .2s ease-out;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.view_more:hover {
+    box-shadow: inset 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-color);
+    color: #eee;
 }
