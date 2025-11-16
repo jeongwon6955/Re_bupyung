@@ -1,14 +1,19 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/intro.css">
-    <link rel="stylesheet" href="../CSS/method.css">
-    <link rel="stylesheet" href="../CSS/nephron.css">
-    <link rel="stylesheet" href="../CSS/compeny.css">
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <link rel="stylesheet" href="../../CSS/intro.css">
+    <link rel="stylesheet" href="../../CSS/method.css">
+    <link rel="stylesheet" href="../../CSS/nephron.css">
+    <link rel="stylesheet" href="../../CSS/compeny.css">
     <title>다시부평</title>
+    <script src="https://kit.fontawesome.com/2ff1512d45.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <section class="visual">
@@ -16,12 +21,12 @@
         <header>
             <!-- 로고-->
             <div class="logo">
-               <a href="../HTML/index.html"><img src="../img/logo.png" alt=""></a>
+               <a href="<?= $base_path ?>/main"><img src="../../img/logo.png" alt=""></a>
             </div>
 
             <!-- 로그인 영역 -->
             <div class="user">
-                <div class="user_box">
+                <!-- <div class="user_box">
                     <div class="user_label">
                         <button type="button" class="sign-inB"><a href="../PHP/public">로그인</a></button>
                         <button type="button" class="sign-inT"><a href="../PHP/public">로그인</a></button>
@@ -32,6 +37,13 @@
                         <button type="button" class="sign-upB"><a href="../PHP/public/register">회원가입</a></button>
                         <button type="button" class="sign-upT"><a href="../PHP/public/register">회원가입</a></button>
                     </div>
+                </div> -->
+                <div class="loginuser_box">
+                    <p>환영합니다 <i class="fa-solid fa-user"></i> <?= htmlspecialchars($_SESSION['username']) ?>님!</p>
+                    <p class="login_bar">|</p>
+                    <a href="<?= $base_path ?>/logout">
+                        <p><i class="fa-solid fa-door-closed"></i>로그아웃</p>
+                    </a>
                 </div>
             </div>
 
@@ -39,7 +51,7 @@
 
         <div class="v_content">
             <!-- 메인 이미지 -->
-            <img src="../img/mainSub.png" alt="" class="mainSub_img">
+            <img src="../../img/mainSub.png" alt="" class="mainSub_img">
      
             <!-- 메인 텍스트 -->
             <h1 class="main_text">다시 시작하는<span> 부평</span></h1>
@@ -47,10 +59,10 @@
 
         <!-- 사이드 메뉴 -->
         <div class="side_menu">
-            <div class="s_list" id="intro_btn"><img src="../img/icon.png" alt=""> <span class="s_text">다시 부평이란?</span></div>
-            <div class="s_list" id="method_btn"><img src="../img/icon1.png" alt=""> <span class="s_text">자연순환 <br> 실천방법</span></div>
-            <div class="s_list" id="nephron_btn"><img src="../img/icon2.png" alt=""> <span class="s_text">네프론이란?</span></div>
-            <div class="s_list" id="compeny_btn"><img src="../img/icon3.png" alt=""> <span class="s_text">자연순환 <br> 참여 기업</span></div>
+            <div class="s_list" id="intro_btn"><img src="../../img/icon.png" alt=""> <span class="s_text">다시 부평이란?</span></div>
+            <div class="s_list" id="method_btn"><img src="../../img/icon1.png" alt=""> <span class="s_text">자연순환 <br> 실천방법</span></div>
+            <div class="s_list" id="nephron_btn"><img src="../../img/icon2.png" alt=""> <span class="s_text">네프론이란?</span></div>
+            <div class="s_list" id="compeny_btn"><img src="../../img/icon3.png" alt=""> <span class="s_text">자연순환 <br> 참여 기업</span></div>
         </div>
     </section>
 
@@ -61,22 +73,22 @@
             <h2>다시 부평은 자원도, 환경도, 부평도 다시 살아나는 순환을 뜻합니다.</h2>
             <div class="i_content">
                 <div class="i_item">
-                    <img src="../img/item.png" alt="">
+                    <img src="../../img/item.png" alt="">
                     <p class="key">Reduce</p>
                     <p class="key_cont">불필요한것은 줄이고</p>
                 </div>
                 <div class="i_item">
-                    <img src="../img/item2.png" alt="">
+                    <img src="../../img/item2.png" alt="">
                     <p class="key">reuse</p>
                     <p class="key_cont">한 번 더 사용하고</p>
                 </div>
                 <div class="i_item">
-                    <img src="../img/item3.png" alt="">
+                    <img src="../../img/item3.png" alt="">
                     <p class="key">recycle</p>
                     <p class="key_cont">올바르게 재활용 하고</p>
                 </div>
                 <div class="i_item">
-                    <img src="../img/item4.png" alt="">
+                    <img src="../../img/item4.png" alt="">
                     <p class="key">recovery</p>
                     <p class="key_cont">에너지 만들고</p>
                 </div>
@@ -92,25 +104,25 @@
             <div class="m_content">
                 <div class="m_item">
                     <a href="#">
-                        <div class="m_img"><img src="../img/icon.png" alt=""></div>
+                        <div class="m_img"><img src="../../img/icon.png" alt=""></div>
                         <p>플라스틱</p>
                     </a>
                 </div>
                 <div class="m_item">
                     <a href="#">
-                        <div class="m_img"><img src="../img/icon1.png" alt=""></div>
+                        <div class="m_img"><img src="../../img/icon1.png" alt=""></div>
                         <p>비닐</p>
                     </a>
                 </div>
                 <div class="m_item">
                     <a href="#">
-                        <div class="m_img"><img src="../img/icon2.png" alt=""></div>
+                        <div class="m_img"><img src="../../img/icon2.png" alt=""></div>
                         <p>캔</p>
                     </a>
                 </div>
                 <div class="m_item">
                     <a href="#">
-                        <div class="m_img"><img src="../img/icon3.png" alt=""></div>
+                        <div class="m_img"><img src="../../img/icon3.png" alt=""></div>
                         <p>종이</p>
                     </a>
                 </div>
@@ -122,7 +134,7 @@
     <section class="nephron">
         <div class="n_container container">
             <div class="n_imgBox">
-                <img src="../img/SuperBin Logo_Primary_ENG.png" alt="">
+                <img src="../../img/SuperBin Logo_Primary_ENG.png" alt="">
                 <a href="https://www.superbin.co.kr/#" target="_blank">
                     <button type="button" class="n_more">자세히 알아보기</button>
                 </a>
@@ -177,7 +189,7 @@
     <footer>
         <div class="footer">
             <div class="f_top">
-                <img src="../img/logo_white.png" alt="">
+                <img src="../../img/logo_white.png" alt="">
                 <p>인천광역시 부평구 산곡동 화랑로 111 <br>
                    인평자동차 고등학교
                 </p>
@@ -190,6 +202,6 @@
     </footer>
 
     <!-- app.js -->
-    <script src="../JS/app.js"></script>
+    <script src="../../JS/app.js"></script>
 </body>
 </html>

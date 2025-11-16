@@ -299,3 +299,19 @@ footer {
 .f_bottom > p {
     align-content: center;
 }
+
+/* 로그인 후에 화면 */
+.loginuser_box {
+    align-items: center;
+    font-size: 20px;
+    display: flex;
+    cursor: pointer;
+}
+
+.loginuser_box > p > i{
+    margin-left: 10px;
+}
+
+.login_bar {
+    margin: 0 15px 0 15px;
+}

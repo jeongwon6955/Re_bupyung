@@ -17,13 +17,13 @@ require_once __DIR__ . '/../app/model/usermodel.php';
 
 // 2. 🚨 베이스 경로 설정 (XAMPP 하위 경로 문제 해결)
 // 이 경로가 브라우저 주소창의 public/ 바로 앞까지와 일치해야 합니다.
-$base_path = '/Re_bupyung/login/public'; 
+$base_path = '/Re_bupyung/PHP/public'; 
 
 // 3. 리다이렉트 헬퍼 함수 정의
 function redirect($path) {
     global $base_path; 
     
-    // redirect('/login') 호출 시 -> /Re_bupyung/login/public/login URL 생성
+    // redirect('/login') 호출 시 -> /Re_bupyung/PHP/public/login URL 생성
     $target_url = $base_path . ($path === '/' ? '' : $path);
     header("Location: " . $target_url);
     exit();
@@ -51,12 +51,21 @@ switch ($request_path) {
     case '/':
         // 메인 페이지 (로그인 상태가 아니면 /login으로 리다이렉트)
         if (isset($_SESSION['user_id'])) {
-            echo "<h2>환영합니다, " . htmlspecialchars($_SESSION['username']) . "님!</h2>";
-            // 💡 수정: 로그아웃 링크에 $base_path를 포함하여 404 에러 방지
-            echo "<p>로그인 성공! <a href='{$base_path}/logout'>로그아웃</a></p>";
+            redirect('/main');
         } else {
             // 💡 수정: 논리적 경로 '/login'만 전달
             redirect('/login'); 
+        }
+        break;
+
+    // 💡 새로운 라우팅 규칙 추가: 로그인 성공 후 메인 페이지를 보여주는 역할
+    case '/main':
+        if (isset($_SESSION['user_id'])) {
+            // app/views/main.php 파일을 로드하여 사용자에게 보여줍니다.
+            include __DIR__ . '/../app/views/main.php';
+        } else {
+            // 로그인 상태가 아니라면 다시 로그인 페이지로 돌려보냅니다.
+            redirect('/login');
         }
         break;
     

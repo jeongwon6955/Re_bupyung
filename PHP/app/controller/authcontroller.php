@@ -13,7 +13,7 @@ class AuthController {
     // 1. 로그인 폼을 보여주는 메서드
     public function showLogin() {
         if (isset($_SESSION['user_id'])) {
-            redirect('/'); 
+            redirect('/main'); 
         }
         // 💡 수정: __DIR__을 사용해 View 파일 경로 오류 해결
         include __DIR__ . '/../views/login.php'; 
@@ -30,7 +30,7 @@ class AuthController {
             if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
-                redirect('/'); 
+                redirect('/main'); 
             } else {
                 $error = "아이디 또는 비밀번호가 올바르지 않습니다.";
                 include __DIR__ . '/../views/login.php'; 
@@ -44,7 +44,7 @@ class AuthController {
     public function logout() {
         session_unset();
         session_destroy();
-        redirect('/login'); 
+        redirect('/login');
     }
     
     // 4. 회원가입 폼을 보여주는 메서드
