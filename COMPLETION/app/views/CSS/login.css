@@ -1,0 +1,28 @@
+/* 로그인 */
+#visual {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_box {
+    width: 350px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 0px 3px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.logo_login {
+    width: 100%;
+}
+
+.logo_login > img {
+    object-fit: cover;
+    width: 160px;
+    aspect-ratio: 2.5 / 1;
+}
