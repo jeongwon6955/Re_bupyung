@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <title>로그인</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
     <section id="visual">
         <img id="backImg" src="../IMG/main.jpg" alt="비주얼 백그라운드 이미지" title="풀숲">
-        <div class="login_box" style="height: 490px;">
+        <div class="login_box">
             <!-- logo -->
             <div class="logo_login">
                 <img src="../IMG/logo.png" alt="">
@@ -28,17 +28,17 @@
                 <span class="holder">Password</span>
             </div>
 
-            <!-- 비밀번호 확인 -->
-            <div class="input_box">
-                <input type="password" id="pass" required>
-                <span class="holder">Password Check</span>
+            <!-- 체크 -->
+            <div class="check">
+                <input type="checkbox">
+                <span>로그인 정보를 저장하시겠습니까?</span>
             </div>
 
             <!-- 로그인 버튼 -->
-            <button type="submit" id="login_btn">회원가입</button>
+            <button type="submit" id="login_btn">로그인</button>
 
             <!-- 회원가입 버튼 -->
-            <p id="register"><a href="LoginView.php">로그인으로 돌아가기</a></p>
+            <p id="register">아직도 <a href="">회원가입</a>을 안하셨나요?</p>
         </div>
     </section>
 </body>

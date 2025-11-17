@@ -1,0 +1,61 @@
+/* 게시판 */
+#notice {
+    width: 100%;
+    background-color: white;
+    padding-block: 100px;
+}
+
+.n_box {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.serching {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.serching > input {
+    width: 600px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--main-color);
+    outline: none;
+    padding: 20px;
+}
+
+.serching > input:focus {
+    border: 1px solid var(--sub-color);
+}
+
+.board {
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px;
+    border-top: 3px double var(--sub-color);
+    border-bottom: 2px solid var(--sub-color);
+    counter-reset: board;
+}
+
+.board > li {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid var(--main-color);
+    display: flex;
+    align-items: center;
+    padding-inline: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    counter-increment: board;
+}
+
+.board > li::before {
+    content: counter(board) ".";
+    margin-right: 10px;
+}
+
+.board > li:nth-of-type(1) {
+    margin-top: 0px;
+}

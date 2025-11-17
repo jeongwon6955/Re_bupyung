@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/notice.css">
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <!-- 로고 -->
+        <a href="main.php" class="logo">
+            <img src="../IMG/logo.png" alt="로고" title="다시부평">
+        </a>
+
+        <!-- 내비게이션 -->
+        <nav>
+            <ul>
+                <li><a href="#notice">게시판</a></li>
+            </ul>
+        </nav>
+
+        <!-- 로그인 / 회원가입 -->
+        <div class="user">
+            <div class="sign_in"><button type="button">
+                <a href="LoginView.php">로그인</a>
+                <a href="LoginView.php">로그인</a>
+            </button></div>
+            <div class="sign_up"><button type="button">
+                <a href="RegisterView.php">회원가입</a>
+                <a href="RegisterView.php">회원가입</a>
+            </button></div>
+        </div>
+    </header>
+
+    <!-- 비주얼 영역 -->
+    <section id="visual">
+        <img id="backImg" src="../IMG/main.jpg" alt="비주얼 백그라운드 이미지" title="풀숲">
+        <img id="backContent" src="../IMG/mainSub.png" alt="비주얼 이미지" title="가운데에 쓰레기통">
+        <h1 class="visual_text">다시 시작하는<span> 부평</span></h1>
+        <div class="scrTo"></div>
+    </section>
+
+    <!-- 게시판 -->
+    <section id="notice">
+        <div class="s_container">
+            <!-- 섹션 제목 -->
+            <div class="sec_title">
+                <h1>다시부평 게시판</h1>
+                <h3>자연순환의 노하우를 게시판에 담아보세요!<h3>
+            </div>
+            <div class="n_box">
+                <div class="serching">
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                </div>
+                <div class="board">
+                    <li>플라스틱 배출 방법</li>
+                    <li>플라스틱 배출 방법</li>
+                    <li>플라스틱 배출 방법</li>
+                    <li>플라스틱 배출 방법</li>
+                    <li>플라스틱 배출 방법</li>
+                    <li>플라스틱 배출 방법</li>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <div id="footer">
+            <div class="s_container">
+                <a href="index.html" class="logo"><img src="../IMG/logo_white.png" alt="푸터 로고"></a>
+
+                <!-- 사이트 정보 -->
+                <div class="site_info">
+                    <p><span>adress</span>인천광역시 부평구 산곡3동 화랑로 111 인평자동차고등학교</p>
+                    <p><span>developer</span>최정원</p>
+                    <p><span>source</span>자연순환 실천 플랫폼(https://www.recycling-info.or.kr/act4r/main.do)</p>
+                </div>
+            </div>
+
+            <!-- 카피라이트 -->
+            <p class="copyright">Copyright&copy;2025 Designed by Jeongwon Choi. All right reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

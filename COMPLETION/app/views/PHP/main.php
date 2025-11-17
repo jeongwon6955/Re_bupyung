@@ -31,18 +31,19 @@
                 <li><a href="#method">실천방법</a></li>
                 <li><a href="#nephron">네프론</a></li>
                 <li><a href="#company">참여기업</a></li>
+                <li><a href="#">게시판</a></li>
             </ul>
         </nav>
 
         <!-- 로그인 / 회원가입 -->
         <div class="user">
             <div class="sign_in"><button type="button">
-                <a href="/Re_bupyung/COMPLETION/public/index.php?action=login">로그인</a>
-                <a href="/Re_bupyung/COMPLETION/public/index.php?action=login">로그인</a>
+                <a href="LoginView.php">로그인</a>
+                <a href="LoginView.php">로그인</a>
             </button></div>
             <div class="sign_up"><button type="button">
-                <a href="#">회원가입</a>
-                <a href="#">회원가입</a>
+                <a href="RegisterView.php">회원가입</a>
+                <a href="RegisterView.php">회원가입</a>
             </button></div>
         </div>
     </header>
@@ -204,7 +205,7 @@
     <footer>
         <div id="footer">
             <div class="s_container">
-                <a href="index.html" class="logo"><img src="<?= $base_root ?>/IMG/logo_white.png" alt="푸터 로고"></a>
+                <a href="<?= $base_root ?>/PHP/main.php" class="logo"><img src="<?= $base_root ?>/IMG/logo_white.png" alt="푸터 로고"></a>
 
                 <!-- 사이트 정보 -->
                 <div class="site_info">

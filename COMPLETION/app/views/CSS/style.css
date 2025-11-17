@@ -283,3 +283,48 @@ footer .logo img {
     border-top: 1px solid #a0a0a0;
     padding-top: 15px;
 }
+
+/* 자세히보기 */
+.view_more {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    padding: 0 30px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .2s ease-out;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.view_more:hover {
+    box-shadow: inset 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-color);
+    color: #eee;
+}
+
+/* 컨테이너 */
+.s_container {
+    position: relative;
+    width: var(--cwidth);
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* 섹션 제목 */
+.sec_title {
+    text-align: center;
+}
+
+.sec_title h1 {
+    font-size: 4rem;
+    color: var(--sub-color);
+    margin-bottom: 40px;
+}
+
+.sec_title h3 {
+    font-size: 1.8rem;
+}
