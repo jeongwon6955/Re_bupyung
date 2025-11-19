@@ -5,42 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="App/views/CSS/style.css">
+    <link rel="stylesheet" href="App/views/CSS/login.css">
 </head>
 <body>
-    <section id="visual">
-        <img id="backImg" src="../IMG/main.jpg" alt="비주얼 백그라운드 이미지" title="풀숲">
-        <div class="login_box">
-            <!-- logo -->
-            <div class="logo_login">
-                <img src="../IMG/logo.png" alt="">
+    <form method="POST">
+        <section id="visual">
+            <img id="backImg" src="App/views/IMG/main.jpg" alt="비주얼 백그라운드 이미지" title="풀숲">
+            <div class="login_box">
+                <!-- logo -->
+                <div class="logo_login">
+                    <img src="App/views/IMG/logo.png" alt="">
+                </div>
+
+                <!-- 이메일 -->
+                <div class="input_box">
+                    <input type="text"  name="username" id="email" required>
+                    <span class="holder">Username</span>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="input_box">
+                    <input type="password" name="password" id="pass" required>
+                    <span class="holder">Password</span>
+                </div>
+
+                <!-- 체크 -->
+                <div class="check">
+                    <input type="checkbox">
+                    <span>로그인 정보를 저장하시겠습니까?</span>
+                </div>
+
+                <!-- 로그인 버튼 -->
+                <button type="submit" id="login_btn">로그인</button>
+
+                <!-- 회원가입 버튼 -->
+                <p id="register">아직도 <a href="index.php?route=user/register">회원가입</a>을 안하셨나요?</p>
             </div>
-
-            <!-- 이메일 -->
-            <div class="input_box">
-                <input type="text" p id="email" required>
-                <span class="holder">Username</span>
-            </div>
-
-            <!-- 비밀번호 -->
-            <div class="input_box">
-                <input type="password" id="pass" required>
-                <span class="holder">Password</span>
-            </div>
-
-            <!-- 체크 -->
-            <div class="check">
-                <input type="checkbox">
-                <span>로그인 정보를 저장하시겠습니까?</span>
-            </div>
-
-            <!-- 로그인 버튼 -->
-            <button type="submit" id="login_btn">로그인</button>
-
-            <!-- 회원가입 버튼 -->
-            <p id="register">아직도 <a href="RegisterView.php">회원가입</a>을 안하셨나요?</p>
-        </div>
-    </section>
+        </section>
+    </form>
 </body>
 </html>

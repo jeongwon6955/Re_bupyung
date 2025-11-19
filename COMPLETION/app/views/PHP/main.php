@@ -36,16 +36,20 @@
         </nav>
 
         <!-- 로그인 / 회원가입 -->
+        <?php if (isset($_SESSION['user'])): ?>
+            <p style="font-size: 30px;">환영합니다 <?php echo htmlspecialchars($_SESSION['user']); ?>님 | <a href="index.php?route=user/logout">로그아웃</a></p>
+        <?php else: ?>
         <div class="user">
             <div class="sign_in"><button type="button">
-                <a href="LoginView.php">로그인</a>
-                <a href="LoginView.php">로그인</a>
+                <a href="index.php?route=user/login">로그인</a>
+                <a href="index.php?route=user/login">로그인</a>
             </button></div>
             <div class="sign_up"><button type="button">
-                <a href="RegisterView.php">회원가입</a>
-                <a href="RegisterView.php">회원가입</a>
+                <a href="index.php?route=user/register">회원가입</a>
+                <a href="index.php?route=user/register">회원가입</a>
             </button></div>
         </div>
+        <?php endif; ?>
     </header>
 
     <!-- 비주얼 영역 -->
