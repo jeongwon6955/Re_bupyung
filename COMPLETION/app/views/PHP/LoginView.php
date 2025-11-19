@@ -42,6 +42,11 @@
                 <!-- 회원가입 버튼 -->
                 <p id="register">아직도 <a href="index.php?route=user/register">회원가입</a>을 안하셨나요?</p>
             </div>
+            <?php if (isset($error)): ?>
+                <script>
+                    alert("<?php echo addslashes($error); ?>")
+                </script>
+            <?php endif; ?>
         </section>
     </form>
 </body>

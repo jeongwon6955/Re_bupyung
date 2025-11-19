@@ -20,7 +20,7 @@
     <!-- 헤더 영역 -->
     <header>
         <!-- 로고 -->
-        <a href="main.php" class="logo">
+        <a href="index.php?route=user/home" class="logo">
             <img src="<?= $base_root ?>/IMG/logo.png" alt="로고" title="다시부평">
         </a>
 
@@ -37,18 +37,33 @@
 
         <!-- 로그인 / 회원가입 -->
         <?php if (isset($_SESSION['user'])): ?>
-            <p style="font-size: 30px;">환영합니다 <?php echo htmlspecialchars($_SESSION['user']); ?>님 | <a href="index.php?route=user/logout">로그아웃</a></p>
+            <div class="user">
+                <ul class="user_info">
+                    <i class="fa-solid fa-user"></i><?php echo htmlspecialchars($_SESSION['user']); ?>
+                    <ul class="user_submenu">
+                        <li><a href="#">내정보</a></li>
+                        <li><a href="#">설정</a></li>
+                    </ul>
+                </ul>
+                <div class="logout">
+                    <button type="button">
+                        <a href="index.php?route=user/logout">로그아웃</a>
+                        <a href="index.php?route=user/logout">로그아웃</a>
+                    </button>
+                </div>
+            </div>
+            <!-- <p style="font-size: 30px;">환영합니다님 | <a href="index.php?route=user/logout">로그아웃</a></p> -->
         <?php else: ?>
-        <div class="user">
-            <div class="sign_in"><button type="button">
-                <a href="index.php?route=user/login">로그인</a>
-                <a href="index.php?route=user/login">로그인</a>
-            </button></div>
-            <div class="sign_up"><button type="button">
-                <a href="index.php?route=user/register">회원가입</a>
-                <a href="index.php?route=user/register">회원가입</a>
-            </button></div>
-        </div>
+            <div class="user">
+                <div class="sign_in"><button type="button">
+                    <a href="index.php?route=user/login">로그인</a>
+                    <a href="index.php?route=user/login">로그인</a>
+                </button></div>
+                <div class="sign_up"><button type="button">
+                    <a href="index.php?route=user/register">회원가입</a>
+                    <a href="index.php?route=user/register">회원가입</a>
+                </button></div>
+            </div>
         <?php endif; ?>
     </header>
 

@@ -124,11 +124,62 @@ nav > ul > li > a:hover {
     transition: .2s ease-out;
 }
 
+.user_info {
+    font-size: 20px;
+    margin-right: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    height: 45px;
+    align-content: center;
+}
+
+.user_info i {
+    margin-right: 5px;
+}
+
+.user_info:hover .user_submenu {
+    height: 85px;
+    box-shadow: 4px 4px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user_submenu {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 0;
+    top: 45px;
+    left: 0px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.user_submenu > li {
+    padding: 10px 5px;
+}
+
+.user_submenu > li:hover {
+    background-color: var(--main-color);
+}
+
+.user_submenu > li > a {
+    color: #222 ;
+}
+
+.user_submenu > li:hover a {
+    color: #eee;
+}
+
 .sign_in { background-color: white; }
 .sign_up { background-color: #2e2e2e; }
 .sign_up a { color: #eee; }
+.logout { background-color: #222;}
+.logout a { color: #eee;}
 
-.user a:nth-last-child(1) {
+.user > div > button > a:nth-last-child(1) {
     color: #eee;
     border-top-left-radius: 45px;
     border-bottom-left-radius: 45px;
@@ -136,6 +187,7 @@ nav > ul > li > a:hover {
 
 .sign_in a:nth-last-child(1) { background-color: var(--sub-color); }
 .sign_up a:nth-last-child(1) { background-color: var(--main-color); }
+.logout a:nth-last-child(1) { background-color: var(--main-color); }
 
 .user > div:hover button { transform: translateX(-50%); }
 .user > div:hover a:nth-last-child(1) {
