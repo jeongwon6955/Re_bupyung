@@ -52,7 +52,6 @@
                     </button>
                 </div>
             </div>
-            <!-- <p style="font-size: 30px;">환영합니다님 | <a href="index.php?route=user/logout">로그아웃</a></p> -->
         <?php else: ?>
             <div class="user">
                 <div class="sign_in"><button type="button">

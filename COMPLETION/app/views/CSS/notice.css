@@ -5,57 +5,111 @@
     padding-block: 100px;
 }
 
+.sec_title {
+    text-align: left;
+}
+
 .n_box {
     width: 100%;
-    padding-top: 30px;
 }
 
 .serching {
     width: 100%;
-    text-align: center;
-    margin-top: 50px;
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
 }
 
-.serching > input {
-    width: 600px;
-    height: 50px;
-    border-radius: 50px;
-    border: 1px solid var(--main-color);
+.s_listBox {
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    position: relative;
+}
+
+.s_listBox > input {
+    border: none;
+    width: 350px;
+    height: 40px;
     outline: none;
-    padding: 20px;
+    padding: 15px 40px 15px 15px;
+    background-color: transparent;
 }
 
-.serching > input:focus {
-    border: 1px solid var(--sub-color);
+.s_listBox > input::placeholder {
+    font-size: 16px;
+}
+
+.s_listBox > input:focus {
+    border-bottom: 1px solid var(--main-color);
+}
+
+.s_listBox > i {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    font-size: 16px;
 }
 
 .board {
     width: 100%;
     margin-top: 50px;
-    padding: 30px;
-    border-top: 3px double var(--sub-color);
-    border-bottom: 2px solid var(--sub-color);
-    counter-reset: board;
+    padding-block: 30px;
+    border-top: 3px solid var(--sub-color);
+    border-bottom: 3px solid var(--sub-color);
+    counter-reset: item;
 }
 
 .board > li {
     width: 100%;
-    height: 60px;
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 1px solid rgb(220, 220, 220);
     display: flex;
     align-items: center;
-    padding-inline: 30px;
+    padding: 45px 30px;
     font-size: 18px;
     cursor: pointer;
     margin-top: 20px;
-    counter-increment: board;
+    counter-increment: item;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.board_a {
+    flex: 1;
+}
+
+.board_left {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.writer,
+.date {
+    position: relative;
+}
+
+.writer::before,
+.date::before {
+    content: '';
+    position: absolute;
+    right: -10px;
+    width: 1px;
+    height: 19px;
+    background-color: #eee;
 }
 
 .board > li::before {
-    content: counter(board) ".";
+    content: counter(item);
     margin-right: 10px;
+    width: 30px;
+    text-align: center;
 }
 
 .board > li:nth-of-type(1) {
     margin-top: 0px;
+}
+
+.board > li:nth-last-child(1) {
+    border: none;
 }
