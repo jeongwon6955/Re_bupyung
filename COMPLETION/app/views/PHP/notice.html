@@ -56,29 +56,22 @@
                 <div class="serching">
                     <span class="list_count">총 <span></span>건</span>
                     <div class="s_listBox">
-                        <input type="text" name="serching" placeholder="검색어를 입력하세요">
+                        <input type="text" name="serching" placeholder="검색어를 입력하세요" id="serching" autocomplete="off">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
-                <div class="plus_btn"> <span>작성</span> </div>
                 <div class="board">
-                    <li>
-                        <div class="board_a"><a href="#">플라스틱 배출 방법</a></div>
-                        <div class="board_left">
-                            <span class="writer">최정원</span>
-                            <span class="date">2025-11-20</span>
-                            <span class="view">조회수 0</span>
-                        </div>
-                    </li>
-                    <li>플라스틱 배출 방법</li>
-                    <li>플라스틱 배출 방법</li>
-                    <li>플라스틱 배출 방법</li>
-                    <li>플라스틱 배출 방법</li>
-                    <li>플라스틱 배출 방법</li>
-                    <li>플라스틱 배출 방법</li>
-                    <li>플라스틱 배출 방법</li>
+                    <div class="empty">
+                        검색결과가 없습니다
+                    </div>
+                    <!-- 자바스크립트로 생성 -->
+                    <!-- 게시판 아이템 -->
                 </div>
-                <div class="page_btnBox"></div>
+                <div class="page_btnBox">
+                    <div class="p_next"><</div>
+                    <div class="p_num"></div>
+                    <div class="p_prev">></div>
+                </div>
             </div>
         </div>
     </section>
@@ -101,13 +94,6 @@
             <p class="copyright">Copyright&copy;2025 Designed by Jeongwon Choi. All right reserved</p>
         </div>
     </footer>
-
-    <script>
-        const listBox = document.querySelector('.board')
-        const listCount = document.querySelector('.list_count > span');
-        const lists = document.querySelectorAll('.board > li');
-
-        listCount.innerHTML = lists.length;
-    </script>
+    <script src="../JS/notice.js"></script>
 </body>
 </html>
