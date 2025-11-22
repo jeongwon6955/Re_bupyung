@@ -1,11 +1,11 @@
 // json 데이터 불러오기
-let jsonData;
+let jsonData = [];
 
 fetch("../JS/board.json")
 .then(res => res.json())
 .then(data => {
     jsonData = data;
-    boardCall(jsonData);
+    showPage(1, jsonData);
     serching(jsonData);
 })
 
@@ -15,17 +15,30 @@ const inputBtn = document.querySelector('.s_listBox > i');
 const listCount = document.querySelector('.list_count > span')
 const pageNum = document.querySelector('.p_num');
 
-let count = 0;
-
 // 게시판 불러오기
-function boardCall(jsonData) {
+function showPage(page, jsonArr) {
+    currentPage = page;
+
+    // 뒤에서부터 슬라이스
+    let start = jsonArr.length - page * 10;
+    let end = start + 10;
+
+    // 음수 처리
+    start = Math.max(start, 0);
+    end = Math.min(end, jsonArr.length);
+
+    const pageData = jsonArr.slice(start, end); // 뒤에서 앞으로 표시
+
     deleter();
-    if (jsonData.length > 0) {
-        jsonData.forEach((item, index) => {
+    if (pageData.length > 0) {
+        pageData.forEach((item, index) => {
             const list = document.createElement('li');
+
+            const totalNum = start + index + 1;
+
     
             list.innerHTML = `
-                <div class="b_num">${index + 1}</div>
+                <div class="b_num">${totalNum}</div>
                 <div class="board_a">${item.title}</div>
                 <div class="board_left">
                     <span class="writer">${item.writer}</span>
@@ -35,11 +48,10 @@ function boardCall(jsonData) {
             `;
             
             listBox.insertBefore(list, listBox.firstChild);
-            count = index + 1;
         });
     }
-    listCount.textContent = count;
-    drawPagination();
+    listCount.textContent = jsonData.length;
+    drawPagination(jsonArr);
 }
 
 // 검색 엔진
@@ -53,7 +65,7 @@ function serching(jsonData) {
                 let Tcheck = item.title;
                 if(Tcheck.includes(inputBox.value)) {
                     jsonArr.push(item);
-                    boardCall(jsonArr);
+                    showPage(1,jsonArr)
                 }
             })
             jsonArr = [];
@@ -70,11 +82,12 @@ function serching(jsonData) {
         })
         jsonArr = [];
     })
+    drawPagination();
 }
 
 // 페이징 기능
-function drawPagination() {
-    const totalPages = Math.ceil(count / 10); // 버튼 수 계산 (핵심!)
+function drawPagination(jsonArr) {
+    const totalPages = Math.ceil(jsonArr.length / 10); // 버튼 수 계산 (핵심!)
 
     pageNum.innerHTML = ""; // 초기화
 
@@ -82,19 +95,10 @@ function drawPagination() {
         const btn = document.createElement("div");
         btn.textContent = i;
 
-        btn.addEventListener("click", () => showPage(i));
+        btn.addEventListener("click", () => showPage(i, jsonArr));
+        if (i === currentPage) {btn.style.fontWeight = 'bold';}
         pageNum.appendChild(btn);
     }
-}
-
-function showPage(page) {
-    currentPage = page;
-
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const pageItems = lists.slice(start, end);
-
-    drawPagination();
 }
 
 // 삭제
