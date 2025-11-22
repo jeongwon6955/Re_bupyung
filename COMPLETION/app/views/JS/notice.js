@@ -13,6 +13,7 @@ const listBox = document.querySelector('.board');
 const inputBox = document.querySelector('#serching');
 const inputBtn = document.querySelector('.s_listBox > i');
 const listCount = document.querySelector('.list_count > span')
+const pageNum = document.querySelector('.p_num');
 
 let count = 0;
 
@@ -38,16 +39,17 @@ function boardCall(jsonData) {
         });
     }
     listCount.textContent = count;
+    drawPagination();
 }
 
 // 검색 엔진
-
 let jsonArr = [];
 
 function serching(jsonData) {
+    // enter
     inputBox.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-            jsonData.forEach((item,index) => {
+            jsonData.forEach((item) => {
                 let Tcheck = item.title;
                 if(Tcheck.includes(inputBox.value)) {
                     jsonArr.push(item);
@@ -57,6 +59,42 @@ function serching(jsonData) {
             jsonArr = [];
         }
     })
+    // 돋보기 클릭
+    inputBtn.addEventListener('click', () => {
+        jsonData.forEach((item) => {
+            let Tcheck = item.title;
+            if(Tcheck.includes(inputBox.value)) {
+                jsonArr.push(item);
+                boardCall(jsonArr);
+            }
+        })
+        jsonArr = [];
+    })
+}
+
+// 페이징 기능
+function drawPagination() {
+    const totalPages = Math.ceil(count / 10); // 버튼 수 계산 (핵심!)
+
+    pageNum.innerHTML = ""; // 초기화
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("div");
+        btn.textContent = i;
+
+        btn.addEventListener("click", () => showPage(i));
+        pageNum.appendChild(btn);
+    }
+}
+
+function showPage(page) {
+    currentPage = page;
+
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const pageItems = lists.slice(start, end);
+
+    drawPagination();
 }
 
 // 삭제
