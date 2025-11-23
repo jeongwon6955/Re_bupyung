@@ -1,7 +1,7 @@
 // json 데이터 불러오기
 let jsonData = [];
 
-fetch("../JS/board.json")
+fetch("App/views/JS/board.json")
 .then(res => res.json())
 .then(data => {
     jsonData = data;
@@ -50,7 +50,7 @@ function showPage(page, jsonArr) {
             listBox.insertBefore(list, listBox.firstChild);
         });
     }
-    listCount.textContent = jsonData.length;
+    listCount.textContent = jsonArr.length; 
     drawPagination(jsonArr);
 }
 

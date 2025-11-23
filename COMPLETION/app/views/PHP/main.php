@@ -31,7 +31,7 @@
                 <li><a href="#method">실천방법</a></li>
                 <li><a href="#nephron">네프론</a></li>
                 <li><a href="#company">참여기업</a></li>
-                <li><a href="#">게시판</a></li>
+                <li><a href="index.php?route=user/notice">게시판</a></li>
             </ul>
         </nav>
 

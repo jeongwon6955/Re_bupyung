@@ -36,10 +36,6 @@ class UserController {
 
     public function home() {
         session_start();
-        if (!isset($_SESSION['user'])) {
-            // header("Location: index.php?route=user/login");
-            // exit;
-        }
         include "App/views/PHP/main.php";
     }
 
@@ -47,5 +43,10 @@ class UserController {
         session_start();
         session_destroy();
         header("Location: index.php?route=user/home");
+    }
+
+    public function notice() {
+        session_start();
+        include "App/views/PHP/notice.php";
     }
 }

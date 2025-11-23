@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/notice.css">
+    <link rel="stylesheet" href="App/views/CSS/style.css">
+    <link rel="stylesheet" href="App/views/CSS/notice.css">
 </head>
 <body>
     <!-- 헤더 영역 -->
     <header>
         <!-- 로고 -->
-        <a href="main.php" class="logo">
-            <img src="../IMG/logo.png" alt="로고" title="다시부평">
+        <a href="index.php?route=user/home" class="logo">
+            <img src="App/views/IMG/logo.png" alt="로고" title="다시부평">
         </a>
 
         <!-- 내비게이션 -->
@@ -24,22 +25,40 @@
         </nav>
 
         <!-- 로그인 / 회원가입 -->
-        <div class="user">
-            <div class="sign_in"><button type="button">
-                <a href="LoginView.php">로그인</a>
-                <a href="LoginView.php">로그인</a>
-            </button></div>
-            <div class="sign_up"><button type="button">
-                <a href="RegisterView.php">회원가입</a>
-                <a href="RegisterView.php">회원가입</a>
-            </button></div>
-        </div>
+        <?php if (isset($_SESSION['user'])): ?>
+            <div class="user">
+                <ul class="user_info">
+                    <i class="fa-solid fa-user"></i><?php echo htmlspecialchars($_SESSION['user']); ?>
+                    <ul class="user_submenu">
+                        <li><a href="#">내정보</a></li>
+                        <li><a href="#">설정</a></li>
+                    </ul>
+                </ul>
+                <div class="logout">
+                    <button type="button">
+                        <a href="index.php?route=user/logout">로그아웃</a>
+                        <a href="index.php?route=user/logout">로그아웃</a>
+                    </button>
+                </div>
+            </div>
+        <?php else: ?>
+            <div class="user">
+                <div class="sign_in"><button type="button">
+                    <a href="index.php?route=user/login">로그인</a>
+                    <a href="index.php?route=user/login">로그인</a>
+                </button></div>
+                <div class="sign_up"><button type="button">
+                    <a href="index.php?route=user/register">회원가입</a>
+                    <a href="index.php?route=user/register">회원가입</a>
+                </button></div>
+            </div>
+        <?php endif; ?>
     </header>
 
     <!-- 비주얼 영역 -->
     <section id="visual">
-        <img id="backImg" src="../IMG/main.jpg" alt="비주얼 백그라운드 이미지" title="풀숲">
-        <img id="backContent" src="../IMG/mainSub.png" alt="비주얼 이미지" title="가운데에 쓰레기통">
+        <img id="backImg" src="App/views/IMG/main.jpg" alt="비주얼 백그라운드 이미지" title="풀숲">
+        <img id="backContent" src="App/views/IMG/mainSub.png" alt="비주얼 이미지" title="가운데에 쓰레기통">
         <h1 class="visual_text">다시 시작하는<span> 부평</span></h1>
         <div class="scrTo"></div>
     </section>
@@ -77,7 +96,7 @@
     <footer>
         <div id="footer">
             <div class="s_container">
-                <a href="index.html" class="logo"><img src="../IMG/logo_white.png" alt="푸터 로고"></a>
+                <a href="index.html" class="logo"><img src="App/views/IMG/logo_white.png" alt="푸터 로고"></a>
 
                 <!-- 사이트 정보 -->
                 <div class="site_info">
@@ -91,6 +110,6 @@
             <p class="copyright">Copyright&copy;2025 Designed by Jeongwon Choi. All right reserved</p>
         </div>
     </footer>
-    <script src="../JS/notice.js"></script>
+    <script src="App/views/JS/notice.js"></script>
 </body>
 </html>
