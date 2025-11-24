@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import url('main.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #111;
+    font-family: 'MangoBoard-L', Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: 'MangoBoard-L';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-L.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+
+li, ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    outline: inherit;
+    cursor: pointer;
+}
+
+img {
+    object-fit: cover;
+}
+
+html {
+    scroll-behavior: smooth;
+    --webkit-font-smoothing: antialiased;
+    font-size: 62.5%;
+}
+
+:root {
+    --m1-color: #8DAE57;
+    --m2-color: #2A5B2F;
+    --m3-color: #EBFFD3;
+    --m4-color: #A7D0AB;
+    --cwidth: 1200px;
+}
+
+/* 섹션 컨테이너 */
+main {
+    position: relative;
+    z-index: 2;
+}
+
+.section {
+    padding: 150px 0;
+}
+
+.container {
+    width: var(--cwidth);
+    margin: 0 auto;
+}
+
+.sec_title {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.sec_title h1 {
+    font-size: 4rem;
+    color: var(--m2-color);
+    margin-bottom: 40px;
+}
+
+.sec_title h3 {
+    font-size: 1.8rem;
+}
+
+.grid_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--box-size), 1fr));
+    gap: 25px;
+}
+
+/* 자세히 알아보기 버튼 */
+.view_detail {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    padding: 0 30px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    transition: .2s ease-out;
+}
+
+.view_detail:hover {
+    box-shadow: inset 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--m1-color);
+    color: #eee;
+}

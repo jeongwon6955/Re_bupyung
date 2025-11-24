@@ -1,0 +1,493 @@
+/* 헤더 영역 */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    padding-inline: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+
+/* 로고 */
+.logo {
+    display: flex;
+
+    img {
+        width: 14rem;
+        aspect-ratio: 2.5 / 1;
+    }
+}
+
+/* 내비게이션 */
+nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .3s ease-in-out;
+
+    ul { display: flex; }
+
+    a {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 0 25px;
+    }
+
+    a:hover {
+        transition: .2s ease-out;
+        color: var(--m1-color);
+    }
+
+    &.scrolling_bar {
+        --bar-height: 45px;
+        position: fixed;
+        top: -45px;
+        transform: translate(-50%, 0);
+        background-color: #f6f6f6cc;
+        backdrop-filter: blur(10px);
+        height: var(--bar-height);
+        border-radius: var(--bar-height);
+        align-content: center;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 10px 60px rgba(0, 0, 0, 0.05);
+
+        a {
+            height: var(--bar-height);
+            line-height: var(--bar-height);
+        }
+    }
+
+    &.show_bar {
+        transform: translate(-50%, calc(100% + 20px));
+    }
+}
+
+/* 로그인 / 회원가입 */
+.user {
+    display: flex;
+}
+
+.user a {
+    &.white {
+        --background: #eee;
+        --shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.3);
+    }
+
+    &.dark {
+        --background: #2e2e2e;
+        --text: #eee;
+        --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+    }
+
+    --text: #111;
+    --font-size: 1.5rem;
+    --duration: .3s;
+    --move-hover: -2px;
+    --font-shadow: var(--font-size);
+
+    width: 110px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 45px;
+    background: var(--background);
+    font-size: var(--font-size);
+    font-weight: bold;
+    color: var(--text);
+    margin-left: 20px;
+    transition:
+        transform var(--duration) ease-out,
+        box-shadow var(--duration) ease-out;
+
+    div {
+        height: var(--font-size);
+        display: flex;
+        overflow: hidden;
+        text-shadow: 0 var(--font-shadow) 0 var(--text);
+
+        span {
+            display: inline-block;
+            backface-visibility: hidden;
+            transform: translateY(var(--m)) translateZ(0);
+            transition: transform var(--duration) ease;
+            color: var(--text);
+        }
+    }
+
+    &:hover {
+        transform: translateY(var(--move-hover));
+        box-shadow: var(--shadow);
+
+        span { --m: calc( var(--font-size) * -1 ); }
+    }
+}
+
+/* 비주얼 영역 */
+#visual {
+    position: relative;
+    width: 100%;
+    height: 110vh;
+}
+
+#visual::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#visual::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        #f0f0f7aa 5%,
+        transparent 30%,
+        transparent
+    );
+}
+
+.visual_background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.visual_content {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    height: 55%;
+}
+
+.visual_text {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding-inline: 80px;
+    font-size: 6.5rem;
+    color: #eee;
+
+    span { color: var(--m3-color); }
+}
+
+.scrolling_mouse {
+    position: absolute;
+    left: 50%;
+    bottom: 12.5%;
+    transform: translateX(-50%);
+    width: 25px;
+    aspect-ratio: 1.5 / 2.5;
+    border: 2px solid #eee;
+    border-radius: 25px;
+}
+
+.scrolling_mouse::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    width: 5px;
+    aspect-ratio: 1 / 2;
+    border-radius: 10px;
+    background-color: #eee;
+    animation: scrolling infinite ease-in-out 1.5s;
+}
+
+@keyframes scrolling {
+    to {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+}
+
+/* 소개 섹션 / 다시 부평이란? */
+#intro {
+    min-height: 100vh;
+    background-color: var(--m3-color);
+}
+
+.intro_con {
+    margin-top: 80px;
+    --box-size: 250px;
+}
+
+.intro_item {
+    text-align: center;
+}
+
+.intro_item img {
+    width: 200px;
+}
+
+.key {
+    margin-top: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--m2-color);
+}
+
+.key_exp {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* 실천방법 섹션 / 자원순환 실천방법 */
+#eco_practice {
+    position: relative;
+    background-color: lightblue;
+    height: 170vh;
+    overflow: hidden;
+}
+
+#eco_practice::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 80vw;
+    background-color: var(--m4-color);
+    border-radius: 15vw;
+    transform: translate(50%, -25%) rotate(30deg);
+}
+
+#eco_practice::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60vw;
+    height: 60vw;
+    background-color: var(--m2-color);
+    border-radius: 15vw;
+    transform: translate(-60%, 25%) rotate(30deg);
+}
+
+/* 콘텐츠 */
+.eco_con_box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 35px;
+    background-color: rgba(110, 110, 110, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+/* 콘텐츠 컨트롤러 */
+.eco_con_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eco_con_top h1 {
+    font-size: 3rem;
+    color: #eee;
+}
+
+.eco_con_control {
+    display: flex;
+    align-items: center;
+}
+
+.eco_con_control button {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba(20, 20, 20, 0.2);
+    margin-left: 15px;
+    display: grid;
+    place-items: center;
+
+    a {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+
+        i {
+            transform: rotate(-45deg);
+        }
+    }
+
+    i {
+        font-size: 1.8rem;
+        color: #eee;
+    }
+
+    &:hover i {
+        color: var(--m4-color);
+    }
+}
+
+/* 페이지네이션 */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.pagination > div {
+    display: flex;
+
+    div {
+        width: 15px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgba(20, 20, 20, 0.2);
+        margin-right: 15px;
+
+        &.this_page {
+            background-color: var(--m4-color);
+        }
+    }
+}
+
+.page_category {
+    padding: 0 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #eee;
+    height: 35px;
+    background-color: rgba(20, 20, 20, 0.2);
+    align-content: center;
+    border-radius: 35px;
+    margin-left: 15px;
+}
+
+/* 콘텐츠 목록 */
+.eco_list {
+    margin-top: 40px;
+    display: flex;
+}
+
+
+.eco_list > div {
+    &:nth-child(1) {
+        margin-right: 15px;
+
+        .eco_item {
+            height: 455px;
+        }
+
+        .view_detail {
+            margin: 0;
+            margin-top: 15px;
+            width: 100%;
+            background-color: rgba(20, 20, 20, 0.2);
+            backdrop-filter: blur(10px);
+            color: #eee;
+            box-shadow: none;
+
+            &:hover {
+                color: var(--m4-color);
+            }
+        }
+    }
+
+    &:nth-child(2) {
+        width: calc(100% - 365px);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .eco_item {
+            width: 375px;
+
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+.eco_item {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background-color: #3b754190;
+    backdrop-filter: blur(10px);
+    border-radius: 35px;
+    padding: 25px;
+}
+
+.eco_name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #eee;
+}
+
+.eco_item button {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba(20, 20, 20, 0.2);
+    margin-left: 15px;
+    display: grid;
+    place-items: center;
+
+    i {
+        font-size: 1.8rem;
+        color: #eee;
+        transform: rotate(-45deg);
+    }
+
+    &:hover i {
+        color: var(--m4-color);
+    }
+}
+
+.eco_exp {
+    margin-top: 45px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: #eee;
+}
+
+.eco_img {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    width: 140px;
+    aspect-ratio: 1;
+    background-color: var(--m2-color);
+    border-radius: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
