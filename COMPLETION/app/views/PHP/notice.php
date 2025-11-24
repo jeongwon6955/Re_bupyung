@@ -84,9 +84,11 @@
                     <!-- 게시판 아이템 -->
                 </div>
                 <div class="page_btnBox">
-                    <div class="p_next"><</div>
-                    <div class="p_num"></div>
-                    <div class="p_prev">></div>
+                    <div class="p_next"><i class="fa-solid fa-arrow-left"></i></div>
+                    <div class="p_num">
+                        <div>1</div>
+                    </div>
+                    <div class="p_prev"><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
         </div>

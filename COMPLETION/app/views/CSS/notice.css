@@ -133,11 +133,34 @@
     display: flex;
     justify-content: right;
     margin-top: 20px;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .page_btnBox > div {
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
+}
+
+.p_next,
+.p_prev {
+    height: 36px;
+    width: 40px;
+    justify-content: center;
+    border: 1px solid #8b8b8b;
+    display: flex;
+    align-items: center;
+}
+
+.p_next {
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.p_prev {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .p_num {
@@ -146,23 +169,108 @@
 }
 
 .p_num > div {
-    margin-inline: 10px;
-}
-
-.plus_btn {
+    text-align: center;
     font-size: 20px;
-    display: flex;
-    justify-content: right;
-    margin-top: 10px;
+    width: 40px;
+    height: 36px;
+    align-content: center;
+    border-top: 1px solid #8b8b8b;
+    border-bottom: 1px solid #8b8b8b;
+    border-left: 1px solid #8b8b8b;
 }
 
-.plus_btn > span {
+/* 게시판 내용 */
+.n_contentBox {
+    width: 100%;
+}
+
+.n_title {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.n_info {
     display: flex;
+    gap: 30px;
+    font-size: 18px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.n_info > div {
+    display: flex;
+    gap: 20px;
+}
+
+.n_info > div > span {
+    position: relative;
+    font-weight: bold;
+}
+
+.n_info > div > span::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: -10px;
+    width: 1px;
+    height: 12px;
+    background-color: #eee;
+}
+
+.n_content {
+    font-size: 18px;
+    margin-block: 50px;
+    line-height: 40px;
+}
+
+.n_bottom {
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
     align-items: center;
-    justify-content: center;
-    background-color: #222;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
     cursor: pointer;
+}
+
+.n_bottom > button {
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    transition: .2s ease-out;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 45px;
+    position: relative;
+}
+
+.n_bottom > button::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: -20px;
+    width: 1px;
+    height: 30px;
+    background-color: #eee;
+}
+
+.n_bottom > button:hover {
+    box-shadow: inset 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-color);
+    color: white;
+}
+
+.n_bottom > button:hover i {
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.n_bottom > button > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    align-content: center;
 }
