@@ -92,7 +92,6 @@ function serching(jsonData) {
         })
         jsonArr = [];
     })
-    drawPagination(jsonArr);
 }
 
 // 페이징 기능
