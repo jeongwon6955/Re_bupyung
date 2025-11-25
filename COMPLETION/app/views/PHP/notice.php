@@ -105,6 +105,10 @@
                     <p><span>adress</span>인천광역시 부평구 산곡3동 화랑로 111 인평자동차고등학교</p>
                     <p><span>developer</span>최정원</p>
                     <p><span>source</span>자연순환 실천 플랫폼(https://www.recycling-info.or.kr/act4r/main.do)</p>
+                    <p><span>IMG source</span><a href="https://www.flaticon.com/kr/free-icons/-" title="플라스틱 병 아이콘">플라스틱 병 아이콘 제작자: juicy_fish - Flaticon</a></p>
+                    <p><span>IMG source</span><a href="https://www.flaticon.com/kr/free-icons/-" title="비닐 봉투 아이콘">비닐 봉투 아이콘 제작자: nawicon - Flaticon</a></p>
+                    <p><span>IMG source</span><a href="https://www.flaticon.com/kr/free-icons/-" title="제로 낭비 아이콘">제로 낭비 아이콘 제작자: juicy_fish - Flaticon</a></p>
+                    <p><span>IMG source</span><a href="https://www.flaticon.com/kr/free-icons/" title="종이 아이콘">종이 아이콘 제작자: Freepik - Flaticon</a></p>
                 </div>
             </div>
 
