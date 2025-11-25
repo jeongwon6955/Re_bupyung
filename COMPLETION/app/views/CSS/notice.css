@@ -224,6 +224,10 @@
     line-height: 40px;
 }
 
+.n_content > p {
+    margin-bottom: 30px;
+}
+
 .n_bottom {
     display: flex;
     gap: 40px;

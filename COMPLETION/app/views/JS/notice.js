@@ -42,7 +42,7 @@ function showPage(page, jsonArr) {
     
             list.innerHTML = `
                 <div class="b_num">${totalNum}</div>
-                <div class="board_a"><a href="#" data-id="${item.id}">${item.title}</a></div>
+                <div class="board_a"><a href="#notice" data-id="${item.id}">${item.title}</a></div>
                 <div class="board_left">
                     <span class="writer">${item.writer}</span>
                     <span class="date">${item.date}</span>
@@ -128,16 +128,9 @@ function DataCall(listID, jsonData) {
                         <div class="h"><span>좋아요</span> ${likes}</div>
                     </div>
                     <div class="n_content">
-                        플라스틱은 우리 일상에 필수적이지만, 올바르게 분리배출하지 않으면 재활용이 불가능해져 환경에 큰 부담을 줍니다. 지속 가능한 재활용을 위해 모든 플라스틱 용기는 아래의 4가지 핵심 수칙을 반드시 지켜 배출해야 합니다. <br>
-            
-                        🌟 4가지 핵심 수칙: 비우고, 헹구고, 분리하고, 섞지 않는다 <br>
-                        내용물 비우기 (비운다): 용기 안의 음료, 음식물, 세제 등 내용물을 남김없이 완전히 비워야 합니다. <br>
-                        
-                        깨끗하게 헹구기 (헹군다): 물이나 세제를 이용해 이물질이나 냄새가 남지 않도록 깨끗하게 헹궈주세요. ※ 이물질 제거가 어렵거나 오염이 심한 경우 재활용이 불가능하므로 종량제 봉투에 버려야 합니다.  <br>
-                        
-                        다른 재질 분리 (분리한다): 용기에 부착된 라벨, 스티커, 비닐, 뚜껑(다른 재질) 등은 깨끗하게 제거하여 재질별로 분리(일반 쓰레기 또는 비닐류 등)합니다. <br>
-                        
-                        부피 줄여 배출 (섞지 않는다): 가능한 한 플라스틱을 압착하여 부피를 최소화한 후, 다른 재질과 섞지 않고 플라스틱 전용 수거함에 배출합니다. 특히, 투명 페트병은 별도 수거함에 분리하여 배출해야 고품질 재활용이 가능합니다. <br>
+                    <p>${item.intro}</p>
+                    <p>${item.body}</p>
+                    <p>${item.conclusion}</p>
                     </div>
                     <div class="n_bottom">
                         <button type="button"><a href="index.php?route=user/notice">목록 <i class="fa-solid fa-arrow-right"></i></a></button>

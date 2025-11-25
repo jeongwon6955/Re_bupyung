@@ -1,8 +1,7 @@
 /* 자원순환 실천방법 */
 #method {
-    background-color: white;
+    background-color: lightblue;
     height: 170vh;
-    z-index: 1;
     overflow: hidden;
 }
 
@@ -16,7 +15,6 @@
     background-color: #a7d0ab;
     border-radius: 15vw;
     transform: translate(50%, -25%) rotate(30deg);
-    z-index: 2;
 }
 
 #method::after {
@@ -29,27 +27,173 @@
     background-color: var(--sub-color);
     border-radius: 15vw;
     transform: translate(-50%, 25%) rotate(30deg);
-    z-index: 2;
 }
 
-/* 물줄기 */
-.water_course {
-    position: absolute;
-    right: 0;
-    top: 0;
+/* 콘텐츠 내용 */
+.eco_con_box {
     width: 100%;
-    aspect-ratio: 1;
-    background-color: lightblue;
-    z-index: 1;
+    height: 730px;
+    background-color: rgba(110, 110, 110, 0.3);
+    z-index: 2;
+    padding: 35px;
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
 }
 
-/* 콘텐츠 제목 */
-.con_title h1 {
-    font-size: 4rem;
-    color: var(--sub-color);
-    margin-bottom: 20px;
+.eco_con_top {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.con_title h3 {
-    font-size: 1.8rem;
+.eco_con_top > h1 {
+    font-size: 30px;
+    color: #eee;
+}
+
+.eco_controll {
+    display: flex;
+}
+
+.eco_controll > button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 21px;
+    margin-left: 15px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.eco_con_box button > i {
+    color: #eee;
+}
+
+.eco_con_box button:hover > i,
+.eco_more:hover {
+    color: var(--sec-color);
+}
+
+.eco_controll > button:nth-last-child(1) > i {
+    transform: rotate(-45deg);
+}
+
+.pagination {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.pagination > div {
+    display: flex;
+}
+
+.pagination > div > div {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-right: 15px;
+    border-radius: 50px;
+}
+
+.pagination > div > div:nth-child(1) {
+    background-color: var(--sec-color);
+}
+
+.page_category {
+    height: 35px;
+    padding-inline: 15px;
+    align-content: center;
+    font-size: 15px;
+    color: #eee;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    margin-left: 15px;
+}
+
+.eco_list {
+    margin-top: 40px;
+    display: flex;
+}
+
+.eco_list > div:nth-child(1) > .eco_item {
+    width: 350px;
+    height: 455px;
+}
+
+.eco_list > div:nth-child(1) {
+    margin-right: 15px;
+    width: 350px;
+}
+
+.eco_list > div:nth-child(2) {
+    width: 765px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+.eco_item {
+    width: 100%;
+    height: 250px;
+    background-color: #3b754190;
+    border-radius: 30px;
+    padding: 25px;
+    position: relative;
+}
+
+.eco_more {
+    width: 350px;
+    height: 45px;
+    margin-top: 15px;
+    padding-inline: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.1s ease-in-out;
+    color: #eee;
+}
+
+.eco_item > button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 21px;
+    margin-left: 15px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.eco_name {
+    font-size: 30px;
+    color: #eee;
+}
+
+.eco_exp {
+    font-size: 16px;
+    margin-top: 45px;
+    color: #eee;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.eco_item > img {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--sub-color);
+    border-radius: 30px;
+    padding: 10px;
 }
